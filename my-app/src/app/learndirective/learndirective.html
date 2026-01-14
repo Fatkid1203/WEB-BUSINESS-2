@@ -1,0 +1,23 @@
+<p>learndirective works!</p>
+
+<button (click)="changeView()">Change View</button>
+
+<div *ngIf="flag_value==1; else view_k234111e">
+    <h1>UEL</h1>
+</div>
+
+<ng-template #view_k234111e>
+    <h1>Chúng tôi là K234111E</h1>
+</ng-template>
+
+<h3>list products:</h3>
+<p *ngFor="let p of products">{{p}}</p>
+<h3>list products 2:</h3>
+<select>
+    <option *ngFor="let p of products2" [value]="p.id">{{p.name}}</option>
+</select>
+
+<h3>List products 3:</h3>
+<ol>
+    <li *ngFor="let p of products">{{p}}</li>
+</ol>
