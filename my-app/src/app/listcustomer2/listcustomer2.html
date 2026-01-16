@@ -1,0 +1,20 @@
+<p>listcustomer2 works!</p>
+<div>
+    From Age:
+    <select #minAge>
+        <option *ngFor="let age of ages" [value]="age">{{age}}</option>
+    </select>
+    To Age:
+    <select #maxAge>
+        <option *ngFor="let age of ages" [value]="age">{{age}}</option>
+    </select>
+    <button (click)="filterByAgeRange(minAge.value, maxAge.value)">Filter</button>
+</div>
+<ol>
+    <li *ngFor="let c of customers">
+        <div>
+            <p>{{c.id}} - {{c.name}} - {{c.age}}</p>
+            <img [src]="c.picture" alt="" width="100">
+        </div>
+    </li>
+</ol>
