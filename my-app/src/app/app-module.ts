@@ -2,27 +2,44 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app';
 import { LunarYearComponent } from './lunar-year/lunar-year';
 import { Listcustomer } from './listcustomer/listcustomer';
 import { Listcustomer2 } from './listcustomer2/listcustomer2';
 import { Customerdetail } from './customerdetail/customerdetail';
 import { Catalog } from './catalog/catalog';
+import { About } from './about/about';
+import { Notfound } from './notfound/notfound';
+import { Listproduct } from './listproduct/listproduct';
+import { Productdetail } from './productdetail/productdetail';
+import { Ex13 } from './ex13/ex13';
+import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
+import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
+import { Ex18 } from './ex18/ex18';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     LunarYearComponent,     // ✅ import standalone
-    Listcustomer2           // ✅ import standalone
+    Listcustomer2,           // ✅ import standalone
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     Listcustomer,
     Customerdetail,
-    Catalog
+    Catalog,
+    About,
+    Notfound,
+    Listproduct,
+    Productdetail,
+    Ex13,
+    ServiceProductImageEventDetail,
+    ServiceProductImageEvent,
+    Ex18
   ]
 })
 export class AppModule { }

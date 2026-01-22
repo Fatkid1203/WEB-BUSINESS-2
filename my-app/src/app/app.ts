@@ -5,6 +5,7 @@ import { Listcustomer2 } from './listcustomer2/listcustomer2';
 @Component({
   selector: 'app-root',
   standalone: false,
-  templateUrl: './app.html'
+  templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class AppComponent { }
