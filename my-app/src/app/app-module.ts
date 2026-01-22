@@ -17,6 +17,10 @@ import { Ex13 } from './ex13/ex13';
 import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
 import { Ex18 } from './ex18/ex18';
+import { Ex19 } from './ex19/ex19';
+import { Product } from './ex19/product/product';
+import { ListProduct } from './ex19/list-product/list-product';
+import { ServiceProduct } from './ex19/service-product/service-product';
 
 @NgModule({
   imports: [
@@ -39,7 +43,11 @@ import { Ex18 } from './ex18/ex18';
     Ex13,
     ServiceProductImageEventDetail,
     ServiceProductImageEvent,
-    Ex18
+    Ex18,
+    Ex19,
+    Product,
+    ListProduct,
+    ServiceProduct
   ]
 })
 export class AppModule { }

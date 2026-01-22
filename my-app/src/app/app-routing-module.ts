@@ -11,6 +11,10 @@ import { Productdetail } from './productdetail/productdetail';
 import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { Ex18 } from './ex18/ex18';
+import { Ex19 } from './ex19/ex19';
+import { Product } from './ex19/product/product';
+import { ListProduct } from './ex19/list-product/list-product';
+import { ServiceProduct } from './ex19/service-product/service-product';
 
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
@@ -22,6 +26,10 @@ const routes: Routes = [
   { path: 'service-product-image-event', component: ServiceProductImageEvent },
   { path: 'service-product-image-event/:id', component: ServiceProductImageEventDetail },
   { path: 'exercise-18', component: Ex18 },
+  { path: 'exercise-19', component: Ex19 },
+  { path: 'product', component: Product },
+  { path: 'list-product', component: ListProduct },
+  { path: 'service-product', component: ServiceProduct },
 
   { path: "**", component: Notfound },
 ];
@@ -31,3 +39,8 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const RoutingComponent = [
+  Product,
+  ListProduct,
+  ServiceProduct
+]
