@@ -21,6 +21,7 @@ import { Ex19 } from './ex19/ex19';
 import { Product } from './ex19/product/product';
 import { ListProduct } from './ex19/list-product/list-product';
 import { ServiceProduct } from './ex19/service-product/service-product';
+import { FakeProduct } from './fake-product/fake-product';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { ServiceProduct } from './ex19/service-product/service-product';
     Ex19,
     Product,
     ListProduct,
-    ServiceProduct
+    ServiceProduct,
+    FakeProduct
   ]
 })
 export class AppModule { }

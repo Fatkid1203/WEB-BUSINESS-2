@@ -15,7 +15,7 @@ import { Ex19 } from './ex19/ex19';
 import { Product } from './ex19/product/product';
 import { ListProduct } from './ex19/list-product/list-product';
 import { ServiceProduct } from './ex19/service-product/service-product';
-
+import { FakeProduct } from './fake-product/fake-product';
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
   { path: "gioi-thieu", component: About },
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'product', component: Product },
   { path: 'list-product', component: ListProduct },
   { path: 'service-product', component: ServiceProduct },
-
+  { path: 'ex26', component: FakeProduct },
   { path: "**", component: Notfound },
 ];
 
