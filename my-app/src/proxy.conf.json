@@ -7,5 +7,24 @@
         "secure": true,
         "changeOrigin": true,
         "logLevel": "debug"
+    },
+    {
+        "context": [
+            "/books",
+            "/images"
+        ],
+        "target": "http://localhost:3000",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    {
+        "context": [
+            "/v1/ticker"
+        ],
+        "target": "https://api.alternative.me",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
     }
 ]

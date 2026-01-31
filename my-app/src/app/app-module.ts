@@ -22,6 +22,11 @@ import { Product } from './ex19/product/product';
 import { ListProduct } from './ex19/list-product/list-product';
 import { ServiceProduct } from './ex19/service-product/service-product';
 import { FakeProduct } from './fake-product/fake-product';
+import { Books } from './books/books';
+import { Ex27 } from './ex27/ex27';
+import { Ex28 } from './ex28/ex28';
+import { ReactiveFormComponent } from './reactive-form/reactive-form';
+import { TemplateFormComponent } from './template-form/template-form';
 
 @NgModule({
   imports: [
@@ -29,7 +34,9 @@ import { FakeProduct } from './fake-product/fake-product';
     AppRoutingModule,
     LunarYearComponent,     // ✅ import standalone
     Listcustomer2,           // ✅ import standalone
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormComponent,
+    TemplateFormComponent
   ],
   bootstrap: [AppComponent],
   declarations: [
@@ -49,7 +56,10 @@ import { FakeProduct } from './fake-product/fake-product';
     Product,
     ListProduct,
     ServiceProduct,
-    FakeProduct
+    FakeProduct,
+    Books,
+    Ex27,
+    Ex28
   ]
 })
 export class AppModule { }

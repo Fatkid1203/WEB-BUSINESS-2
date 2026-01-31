@@ -16,6 +16,11 @@ import { Product } from './ex19/product/product';
 import { ListProduct } from './ex19/list-product/list-product';
 import { ServiceProduct } from './ex19/service-product/service-product';
 import { FakeProduct } from './fake-product/fake-product';
+import { Books } from './books/books';
+import { Ex27 } from './ex27/ex27';
+import { Ex28 } from './ex28/ex28';
+import { ReactiveFormComponent } from './reactive-form/reactive-form';
+import { TemplateFormComponent } from './template-form/template-form';
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
   { path: "gioi-thieu", component: About },
@@ -31,6 +36,11 @@ const routes: Routes = [
   { path: 'list-product', component: ListProduct },
   { path: 'service-product', component: ServiceProduct },
   { path: 'ex26', component: FakeProduct },
+  { path: 'ex27', component: Ex27 },
+  { path: 'ex28', component: Ex28 },
+  { path: 'ex39', component: Books },
+  { path: 'reactive-form', component: ReactiveFormComponent },
+  { path: 'template-form', component: TemplateFormComponent },
   { path: "**", component: Notfound },
 ];
 

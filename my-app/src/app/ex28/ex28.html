@@ -1,0 +1,59 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Bitcoin Price Index</h2>
+
+    <div *ngIf="bitcoinData; else loading">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">{{bitcoinData.name}} ({{bitcoinData.symbol}})</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Last Updated: {{ bitcoinData.last_updated | date:'medium' }}</p>
+
+                <div class="display-6 mp-4 text-center">
+                    1 BTC = {{ bitcoinData.price_usd | currency:'USD' }}
+                </div>
+
+                <table class="table table-bordered table-striped mt-3">
+                    <tbody>
+                        <tr>
+                            <th>Rank</th>
+                            <td>{{bitcoinData.rank}}</td>
+                        </tr>
+                        <tr>
+                            <th>Market Cap</th>
+                            <td>{{bitcoinData.market_cap_usd | currency:'USD'}}</td>
+                        </tr>
+                        <tr>
+                            <th>24h Change</th>
+                            <td [class.text-danger]="bitcoinData.percent_change_24h < 0"
+                                [class.text-success]="bitcoinData.percent_change_24h >= 0">
+                                {{bitcoinData.percent_change_24h}}%
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Available Supply</th>
+                            <td>{{bitcoinData.available_supply | number}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <div *ngIf="!errMessage" class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading Bitcoin data...</p>
+        </div>
+
+        <div *ngIf="errMessage" class="alert alert-danger mt-3">
+            <h4>Error Loading Data</h4>
+            <p>{{errMessage}}</p>
+            <p>Please ensure that your Node.js server (port 3000) is running and you have restarted Angular.</p>
+        </div>
+    </ng-template>
+
+
+</div>
