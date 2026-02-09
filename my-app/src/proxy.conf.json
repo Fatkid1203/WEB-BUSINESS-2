@@ -20,6 +20,16 @@
     },
     {
         "context": [
+            "/upload",
+            "/image"
+        ],
+        "target": "http://localhost:3001",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    {
+        "context": [
             "/v1/ticker"
         ],
         "target": "https://api.alternative.me",

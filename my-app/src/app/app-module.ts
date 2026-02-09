@@ -27,6 +27,9 @@ import { Ex27 } from './ex27/ex27';
 import { Ex28 } from './ex28/ex28';
 import { ReactiveFormComponent } from './reactive-form/reactive-form';
 import { TemplateFormComponent } from './template-form/template-form';
+import { FileUpload } from './file-upload/file-upload';
+import { BookDetailComponent } from './books/book-detail/book-detail';
+import { BookFormComponent } from './books/book-form/book-form';
 
 @NgModule({
   imports: [
@@ -36,7 +39,9 @@ import { TemplateFormComponent } from './template-form/template-form';
     Listcustomer2,           // ✅ import standalone
     HttpClientModule,
     ReactiveFormComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    BookDetailComponent,
+    BookFormComponent
   ],
   bootstrap: [AppComponent],
   declarations: [
@@ -59,7 +64,10 @@ import { TemplateFormComponent } from './template-form/template-form';
     FakeProduct,
     Books,
     Ex27,
-    Ex28
+    Ex28,
+    Ex27,
+    Ex28,
+    FileUpload
   ]
 })
 export class AppModule { }

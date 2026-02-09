@@ -8,7 +8,7 @@ import { IFakeProduct } from '../myclasses/iProduct';
   providedIn: 'root',
 })
 export class FakeProductService {
-  private _url: string = "/products"
+  private _url: string = "https://fakestoreapi.com/products"
   constructor(private _http: HttpClient) { }
   getFakeProductData(): Observable<any> {
     return this._http.get<any>(this._url).pipe(

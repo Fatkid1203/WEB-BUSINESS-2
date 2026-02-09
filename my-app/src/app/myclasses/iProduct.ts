@@ -8,4 +8,4 @@ export interface IFakeProduct {
     category: string,
     image: string,
     rate: IFakeProductRating
-}
+    }

@@ -21,6 +21,10 @@ import { Ex27 } from './ex27/ex27';
 import { Ex28 } from './ex28/ex28';
 import { ReactiveFormComponent } from './reactive-form/reactive-form';
 import { TemplateFormComponent } from './template-form/template-form';
+import { FileUpload } from './file-upload/file-upload';
+import { BookDetailComponent } from './books/book-detail/book-detail';
+import { BookFormComponent } from './books/book-form/book-form';
+
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
   { path: "gioi-thieu", component: About },
@@ -41,6 +45,11 @@ const routes: Routes = [
   { path: 'ex39', component: Books },
   { path: 'reactive-form', component: ReactiveFormComponent },
   { path: 'template-form', component: TemplateFormComponent },
+  { path: 'file-upload', component: FileUpload },
+  { path: 'ex50', component: Books },
+  { path: 'ex50/new', component: BookFormComponent },
+  { path: 'ex50/edit/:id', component: BookFormComponent },
+  { path: 'ex50/:id', component: BookDetailComponent },
   { path: "**", component: Notfound },
 ];
 

@@ -1,20 +1,40 @@
-<p>books works!</p>
-{{errMessage}}
-<table border="1">
-    <tr>
-        <td>BookId</td>
-        <td>BookName</td>
-        <td>Price</td>
-        <td>Image</td>
-    </tr>
-    <tbody>
-        <tr *ngFor="let book of books">
-            <td>{{book.BookId}}</td>
-            <td>{{book.BookName}}</td>
-            <td>{{book.Price}} </td>
-            <td>
-                <img src="http://localhost:3000/images/{{book.Image}}" width="50px" height="50px">
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container mt-4">
+    <h2 class="mb-3">QUẢN LÝ THÔNG TIN SÁCH</h2>
+    <a routerLink="/ex50/new" class="btn btn-primary mb-3">Create New</a>
+    <p class="text-danger">{{errMessage}}</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Tensach</th>
+                <th>Giaban</th>
+                <th>Mota</th>
+                <th>Anhbia</th>
+                <th>Ngaycapnhat</th>
+                <th>Soluongton</th>
+                <th>MaCD</th>
+                <th>MaNXB</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.Tensach}}</td>
+                <td>{{book.Giaban | currency:'VND'}}</td>
+                <td>{{book.Mota}}</td>
+                <td>
+                    <img [src]="book.Anhbia.startsWith('p') ? '/images/' + book.Anhbia : '/image/' + book.Anhbia"
+                        width="50" height="50">
+                </td>
+                <td>{{book.Ngaycapnhat | date:'short'}}</td>
+                <td>{{book.Soluongton}}</td>
+                <td>{{book.MaCD}}</td>
+                <td>{{book.MaNXB}}</td>
+                <td>
+                    <a [routerLink]="['/ex50/edit', book.id]" class="btn btn-sm btn-warning me-1">Edit</a>
+                    <a [routerLink]="['/ex50', book.id]" class="btn btn-sm btn-info me-1">Details</a>
+                    <button class="btn btn-sm btn-danger" (click)="deleteBook(book.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
