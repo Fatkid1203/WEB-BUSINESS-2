@@ -24,6 +24,10 @@ import { TemplateFormComponent } from './template-form/template-form';
 import { FileUpload } from './file-upload/file-upload';
 import { BookDetailComponent } from './books/book-detail/book-detail';
 import { BookFormComponent } from './books/book-form/book-form';
+import { Ex44Component } from './ex44/ex44';
+import { BookUpdateComponent } from './book-update/book-update';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentResultComponent } from './payment-result/payment-result.component';
 
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
@@ -43,6 +47,8 @@ const routes: Routes = [
   { path: 'ex27', component: Ex27 },
   { path: 'ex28', component: Ex28 },
   { path: 'ex39', component: Books },
+  { path: 'ex44', component: Ex44Component },
+  { path: 'ex45', component: BookUpdateComponent },
   { path: 'reactive-form', component: ReactiveFormComponent },
   { path: 'template-form', component: TemplateFormComponent },
   { path: 'file-upload', component: FileUpload },
@@ -50,6 +56,8 @@ const routes: Routes = [
   { path: 'ex50/new', component: BookFormComponent },
   { path: 'ex50/edit/:id', component: BookFormComponent },
   { path: 'ex50/:id', component: BookDetailComponent },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'payment-result', component: PaymentResultComponent },
   { path: "**", component: Notfound },
 ];
 

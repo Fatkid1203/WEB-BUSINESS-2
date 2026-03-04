@@ -32,9 +32,14 @@ export class BookAPIService {
     );
   }
 
-  putBook(book: IBook): Observable<any> {
+  putBook(aBook: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json;charset=utf-8');
-    return this._http.put<IBook>("/books", book, { headers: headers }).pipe(
+    const requestOptions: Object = {
+      headers: headers,
+      responseType: "text"
+    };
+    return this._http.put<any>("/books", JSON.stringify(aBook), requestOptions).pipe(
+      map(res => JSON.parse(res) as Array<IBook>),
       retry(3),
       catchError(this.handleError)
     );

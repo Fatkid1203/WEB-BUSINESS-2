@@ -30,6 +30,7 @@ import { TemplateFormComponent } from './template-form/template-form';
 import { FileUpload } from './file-upload/file-upload';
 import { BookDetailComponent } from './books/book-detail/book-detail';
 import { BookFormComponent } from './books/book-form/book-form';
+import { BookUpdateComponent } from './book-update/book-update';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { BookFormComponent } from './books/book-form/book-form';
     ReactiveFormComponent,
     TemplateFormComponent,
     BookDetailComponent,
-    BookFormComponent
+    BookFormComponent,
+    BookUpdateComponent
   ],
   bootstrap: [AppComponent],
   declarations: [
@@ -67,6 +69,7 @@ import { BookFormComponent } from './books/book-form/book-form';
     Ex28,
     Ex27,
     Ex28,
+    FileUpload,
     FileUpload
   ]
 })

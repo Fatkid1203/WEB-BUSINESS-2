@@ -1,0 +1,18 @@
+
+> my-app@0.0.0 start
+> ng serve
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size
+main.js             | main          | 270.42 kB | 
+styles.css          | styles        |  95 bytes | 
+
+                    | Initial total | 270.51 kB
+
+Application bundle generation complete. [1.732 seconds] - 2026-02-26T01:30:43.410Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help

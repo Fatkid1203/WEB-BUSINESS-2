@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BookAPIService } from '../../myservices/book-apiservice';
@@ -11,16 +11,28 @@ import { IBook as Book } from '../../myclasses/iBook';
   templateUrl: './book-detail.html',
   styleUrls: ['./book-detail.css'],
 })
-export class BookDetailComponent {
+export class BookDetailComponent implements OnInit {
   book: Book | null = null;
   errMessage = '';
 
-  constructor(private api: BookAPIService, private route: ActivatedRoute) {
+  constructor(
+    private api: BookAPIService,
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
+  ) { }
+
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.api.getBook(id).subscribe({
-        next: (b) => (this.book = b),
-        error: (err) => (this.errMessage = err?.message || 'Không tải được chi tiết'),
+        next: (b) => {
+          this.book = b;
+          this.cdr.detectChanges();
+        },
+        error: (err) => {
+          this.errMessage = err?.message || 'Không tải được chi tiết';
+          this.cdr.detectChanges();
+        },
       });
     }
   }

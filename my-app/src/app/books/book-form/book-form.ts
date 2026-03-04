@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
@@ -13,7 +13,7 @@ import { IBook as Book } from '../../myclasses/iBook';
   templateUrl: './book-form.html',
   styleUrls: ['./book-form.css'],
 })
-export class BookFormComponent {
+export class BookFormComponent implements OnInit {
   book: Partial<Book> = {
     Tensach: '',
     Giaban: 0,
@@ -32,8 +32,11 @@ export class BookFormComponent {
   constructor(
     private api: BookAPIService,
     private router: Router,
-    private route: ActivatedRoute
-  ) {
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
+  ) { }
+
+  ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam) {
       this.isEdit = true;
@@ -42,8 +45,12 @@ export class BookFormComponent {
         next: (b) => {
           this.book = { ...b };
           if (b.Anhbia) this.previewUrl = this.api.getCoverUrl(b.Anhbia);
+          this.cdr.detectChanges();
         },
-        error: (err) => (this.errMessage = err?.message || 'Không tải được sách'),
+        error: (err) => {
+          this.errMessage = err?.message || 'Không tải được sách';
+          this.cdr.detectChanges();
+        }
       });
     }
   }

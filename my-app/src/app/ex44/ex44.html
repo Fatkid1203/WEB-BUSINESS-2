@@ -1,0 +1,53 @@
+<div class="container mt-4">
+    <h2>Update a Book (Exercise 44)</h2>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+    </div>
+
+    <form (ngSubmit)="updateBook()" #bookForm="ngForm" class="mb-4">
+        <div class="mb-3">
+            <label for="bookId" class="form-label">BookId:</label>
+            <input type="text" id="bookId" name="BookId" class="form-control" [(ngModel)]="book.BookId" required>
+        </div>
+        <div class="mb-3">
+            <label for="bookName" class="form-label">BookName:</label>
+            <input type="text" id="bookName" name="BookName" class="form-control" [(ngModel)]="book.BookName" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" id="price" name="Price" class="form-control" [(ngModel)]="book.Price" required>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="text" id="image" name="Image" class="form-control" [(ngModel)]="book.Image" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!bookForm.form.valid">Update Book</button>
+    </form>
+
+    <div *ngIf="databaseResult && databaseResult.length > 0">
+        <h3>Updated Database Result:</h3>
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>id (BookId)</th>
+                    <th>Tensach (BookName)</th>
+                    <th>Giaban (Price)</th>
+                    <th>Anhbia (Image)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of databaseResult">
+                    <td>{{item.BookId || item.id}}</td>
+                    <td>{{item.BookName || item.Tensach}}</td>
+                    <td>{{item.Price || item.Giaban}}</td>
+                    <td>{{item.Image || item.Anhbia}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Raw JSON Output (to mimic exactly the exercise)</h4>
+        <pre class="bg-light p-3 border">{{ databaseResult | json }}</pre>
+    </div>
+</div>
