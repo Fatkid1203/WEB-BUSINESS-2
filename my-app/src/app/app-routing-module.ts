@@ -28,6 +28,7 @@ import { Ex44Component } from './ex44/ex44';
 import { BookUpdateComponent } from './book-update/book-update';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentResultComponent } from './payment-result/payment-result.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
@@ -58,6 +59,7 @@ const routes: Routes = [
   { path: 'ex50/:id', component: BookDetailComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'payment-result', component: PaymentResultComponent },
+  { path: 'login', component: LoginComponent },
   { path: "**", component: Notfound },
 ];
 
