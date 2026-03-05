@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Shopping cart</h2>
+
+    <div *ngIf="cartItems.length === 0" class="text-center text-muted">
+        <p>Your cart is empty.</p>
+        <button class="btn btn-secondary" (click)="continueShopping()">Continue shopping</button>
+    </div>
+
+    <div *ngIf="cartItems.length > 0">
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 60px;">Remove</th>
+                    <th style="width: 60px;">SKU</th>
+                    <th style="width: 100px;">Image</th>
+                    <th>Product(s)</th>
+                    <th style="width: 100px;">Price</th>
+                    <th style="width: 80px;">Qty.</th>
+                    <th style="width: 100px;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartItems; let i = index">
+                    <td class="text-center align-middle">
+                        <input type="checkbox" [(ngModel)]="item.selected">
+                    </td>
+                    <td class="align-middle">{{ i + 1 }}</td>
+                    <td class="align-middle">
+                        <img *ngIf="item.image" [src]="item.image" [alt]="item.name"
+                            style="width: 80px; height: 60px; object-fit: contain;">
+                    </td>
+                    <td class="align-middle">{{ item.name }}</td>
+                    <td class="align-middle">${{ item.price?.toFixed(2) }}</td>
+                    <td class="align-middle">
+                        <input type="number" class="form-control form-control-sm" [(ngModel)]="item.quantity" min="1"
+                            style="width: 60px;">
+                    </td>
+                    <td class="align-middle">${{ getTotal(item).toFixed(2) }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6" class="text-end fw-bold">Grand Total:</td>
+                    <td class="fw-bold">${{ getGrandTotal().toFixed(2) }}</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="text-end">
+            <button class="btn btn-info text-white me-2" (click)="updateCart()">Update shopping cart</button>
+            <button class="btn btn-secondary" (click)="continueShopping()">Continue shopping</button>
+        </div>
+    </div>
+</div>

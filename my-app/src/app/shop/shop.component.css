@@ -1,0 +1,12 @@
+.card-img-top {
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    font-size: 0.9rem;
+}
+
+.btn-info {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}

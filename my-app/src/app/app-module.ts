@@ -31,6 +31,9 @@ import { FileUpload } from './file-upload/file-upload';
 import { BookDetailComponent } from './books/book-detail/book-detail';
 import { BookFormComponent } from './books/book-form/book-form';
 import { BookUpdateComponent } from './book-update/book-update';
+import { LoginComponent } from './login/login.component';
+import { ShopComponent } from './shop/shop.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -43,7 +46,10 @@ import { BookUpdateComponent } from './book-update/book-update';
     TemplateFormComponent,
     BookDetailComponent,
     BookFormComponent,
-    BookUpdateComponent
+    BookUpdateComponent,
+    LoginComponent,
+    ShopComponent,
+    CartComponent
   ],
   bootstrap: [AppComponent],
   declarations: [

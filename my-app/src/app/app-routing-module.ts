@@ -29,6 +29,8 @@ import { BookUpdateComponent } from './book-update/book-update';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentResultComponent } from './payment-result/payment-result.component';
 import { LoginComponent } from './login/login.component';
+import { ShopComponent } from './shop/shop.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   // { path: '', component: Listcustomer }, 
@@ -60,6 +62,8 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   { path: 'payment-result', component: PaymentResultComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: 'cart', component: CartComponent },
   { path: "**", component: Notfound },
 ];
 

@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Products</h2>
+        <button class="btn btn-primary btn-lg" (click)="goToCart()">
+            🛒 View Cart <span *ngIf="cartCount > 0" class="badge bg-danger">{{ cartCount }}</span>
+        </button>
+    </div>
+
+    <div *ngIf="message" class="alert alert-success alert-dismissible">
+        {{ message }}
+        <a class="btn btn-sm btn-primary ms-3" (click)="goToCart()" style="cursor:pointer;">🛒 View Cart</a>
+    </div>
+
+    <div *ngIf="loading" class="text-center mt-5">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Loading products...</p>
+    </div>
+
+    <div class="row" *ngIf="!loading && products.length > 0">
+        <div *ngFor="let product of products" class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img *ngIf="product.image" [src]="product.image" class="card-img-top" [alt]="product.name"
+                    style="height: 250px; object-fit: contain; padding: 10px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h6 class="card-title text-primary">{{ product.name }}</h6>
+                    <p class="text-muted small">{{ product.description }}</p>
+                    <p class="fw-bold fs-5">${{ product.price?.toFixed(2) }}</p>
+                </div>
+                <div class="card-footer bg-white border-0 pb-3">
+                    <button class="btn btn-info text-white w-100" (click)="addToCart(product)">
+                        🛒 ADD TO CART
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!loading && products.length === 0" class="text-center text-muted mt-5">
+        <h4>No products found</h4>
+        <p>Please add products to the "Product" collection in MongoDB FashionData database.</p>
+    </div>
+</div>

@@ -40,11 +40,13 @@
     },
     {
         "context": [
-            "/auth"
+            "/auth",
+            "/shop"
         ],
         "target": "http://localhost:3002",
         "secure": false,
         "changeOrigin": true,
-        "logLevel": "debug"
+        "logLevel": "debug",
+        "cookieDomainRewrite": ""
     }
 ]
