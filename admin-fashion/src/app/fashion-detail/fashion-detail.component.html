@@ -1,0 +1,30 @@
+<div class="container" *ngIf="fashion">
+  <div class="detail-card">
+    <div class="detail-header">
+      <h2>{{ fashion.title }}</h2>
+      <span class="style-badge">{{ fashion.style }}</span>
+    </div>
+
+    <div class="detail-thumbnail">
+      <img [src]="fashion.thumbnail" [alt]="fashion.title" />
+    </div>
+
+    <div class="detail-info">
+      <p class="date">Created: {{ fashion.createdDate | date:'dd/MM/yyyy HH:mm' }}</p>
+    </div>
+
+    <div class="detail-content">
+      <h3>Details</h3>
+      <div class="wysiwyg-content" [innerHTML]="fashion.details"></div>
+    </div>
+
+    <div class="detail-actions">
+      <a routerLink="/fashions" class="btn btn-back">← Back to List</a>
+      <a [routerLink]="['/fashions/edit', fashion._id]" class="btn btn-edit">Edit</a>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="errMessage">
+  <div class="error">{{ errMessage }}</div>
+</div>

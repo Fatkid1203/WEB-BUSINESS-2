@@ -1,0 +1,108 @@
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.detail-header {
+  padding: 25px 30px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.style-badge {
+  background: #007bff;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detail-thumbnail {
+  padding: 0 30px;
+}
+
+.detail-thumbnail img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.detail-info {
+  padding: 15px 30px;
+}
+
+.date {
+  color: #888;
+  font-size: 13px;
+}
+
+.detail-content {
+  padding: 0 30px 20px;
+}
+
+.detail-content h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.wysiwyg-content {
+  line-height: 1.7;
+  color: #444;
+}
+
+.detail-actions {
+  padding: 20px 30px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-back {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-back:hover {
+  background: #5a6268;
+}
+
+.btn-edit {
+  background: #ffc107;
+  color: #333;
+}
+
+.btn-edit:hover {
+  background: #e0a800;
+}
+
+.error {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 10px 15px;
+  border-radius: 4px;
+}

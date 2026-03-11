@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Fashion Management</h2>
+  <a routerLink="/fashions/add" class="btn btn-add">+ Add New Fashion</a>
+
+  <div class="error" *ngIf="errMessage">{{ errMessage }}</div>
+
+  <table class="fashion-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Thumbnail</th>
+        <th>Title</th>
+        <th>Style</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fashion of fashions; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img [src]="fashion.thumbnail" alt="thumbnail" class="thumbnail" />
+        </td>
+        <td>{{ fashion.title }}</td>
+        <td>{{ fashion.style }}</td>
+        <td>{{ fashion.createdDate | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td class="actions">
+          <a [routerLink]="['/fashions', fashion._id]" class="btn btn-view">View</a>
+          <a [routerLink]="['/fashions/edit', fashion._id]" class="btn btn-edit">Edit</a>
+          <button (click)="deleteFashion(fashion._id!)" class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="fashions.length === 0 && !errMessage" class="empty-msg">No fashions found.</p>
+</div>

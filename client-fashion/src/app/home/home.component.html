@@ -1,0 +1,31 @@
+<div class="client-container">
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <select [(ngModel)]="searchStyle" name="searchStyle" class="search-select">
+      <option value="">-- All Styles --</option>
+      <option *ngFor="let s of styles" [value]="s">{{ s }}</option>
+    </select>
+    <button (click)="onSearch()" class="btn-search">SEARCH</button>
+  </div>
+
+  <div class="error" *ngIf="errMessage">{{ errMessage }}</div>
+
+  <!-- Fashion Groups by Style -->
+  <div class="style-group" *ngFor="let group of groupedFashions">
+    <h2 class="style-title">{{ group.style | uppercase }}</h2>
+    <div class="fashion-grid">
+      <div class="fashion-card" *ngFor="let fashion of group.fashions">
+        <a [routerLink]="['/fashion', fashion._id]" class="card-link">
+          <div class="card-image">
+            <img [src]="fashion.thumbnail" [alt]="fashion.title" />
+          </div>
+          <div class="card-info">
+            <h4>{{ fashion.title }}</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="groupedFashions.length === 0 && !errMessage" class="empty-msg">No fashions found.</p>
+</div>

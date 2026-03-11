@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+}
+
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-header {
+  background: #343a40;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-header h1 {
+  font-size: 22px;
+}
+
+.admin-header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.admin-header h1 a:hover {
+  opacity: 0.9;
+}
+
+main {
+  padding: 10px 0;
+}

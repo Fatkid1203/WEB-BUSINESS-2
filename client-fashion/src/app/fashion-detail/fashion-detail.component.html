@@ -1,0 +1,23 @@
+<div class="detail-container" *ngIf="fashion">
+  <div class="detail-header">
+    <a routerLink="/" class="back-link">← Back to Home</a>
+  </div>
+
+  <div class="detail-content">
+    <h1>{{ fashion.title }}</h1>
+    <span class="style-tag">{{ fashion.style }}</span>
+
+    <div class="detail-body">
+      <div class="wysiwyg-content" [innerHTML]="fashion.details"></div>
+    </div>
+
+    <div class="detail-image" *ngIf="fashion.thumbnail">
+      <img [src]="fashion.thumbnail" [alt]="fashion.title" />
+    </div>
+  </div>
+</div>
+
+<div class="detail-container" *ngIf="errMessage">
+  <div class="error">{{ errMessage }}</div>
+  <a routerLink="/" class="back-link">← Back to Home</a>
+</div>
